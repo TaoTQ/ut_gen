@@ -1,0 +1,69 @@
+{
+  "version": "v3.1",
+  "targets": {
+    "line_pct": 90.0,
+    "branch_pct": 85.0,
+    "method_pct": 85.0
+  },
+  "generation": {
+    "test_class_suffix": "Test",
+    "min_cases_per_method": 3,
+    "prefer_parameterized_tests": true,
+    "use_display_name": true
+  },
+  "rules": {
+    "branch_focus": [
+      "each if/else must include true and false path tests",
+      "each switch must include every case and default",
+      "each try/catch must include success and exception path",
+      "recursive method must include base case and recursive path",
+      "null checks must include null and non-null inputs",
+      "empty string checks must include empty and non-empty inputs",
+      "string palindrome checks must include null, empty, single-char, even/odd length, case-sensitive, and special characters"
+    ],
+    "boundary_three_point": [
+      "x <= K -> test K-1, K, K+1",
+      "length checks -> test 0, boundary-1, boundary",
+      "numeric range -> test min-1, min, max, max+1",
+      "string length -> test empty, single-char, multi-char",
+      "negative values -> test -1, 0, positive for length/indices",
+      "truncation boundaries -> test maxLen-1, maxLen, maxLen+1, zero, negative"
+    ],
+    "loop_paths": [
+      "for/while -> test zero, one, and multiple iterations",
+      "collection traversal -> empty, single-element, and multi-element",
+      "string/array iteration -> test empty, single-element, multi-element",
+      "word reversal -> test empty, single-word, multiple-words, leading/trailing spaces"
+    ],
+    "condition_matrix": [
+      "a || b -> include (false,false), (false,true), (true,false)",
+      "a && b -> include all 4 truth combinations"
+    ],
+    "exception_policy": [
+      "prefer assertThrowsExactly for explicit exception types",
+      "validate key message fragment for expected exceptions",
+      "test IllegalArgumentException for invalid arguments",
+      "test NullPointerException for null inputs when documented",
+      "test StringIndexOutOfBoundsException for invalid string indices",
+      "test IllegalArgumentException for negative counts or lengths"
+    ],
+    "quality": [
+      "method naming style: method_scenario_expected",
+      "avoid meaningless assertions such as assertTrue(true)",
+      "every generated test method must contain at least one strong assertion",
+      "test string methods with null, empty, whitespace-only inputs",
+      "verify regex patterns with edge cases and special characters",
+      "test case conversion methods with mixed case, numbers, and special characters"
+    ]
+  },
+  "focus_hints": [
+    "StringUtils.isPangram branch=91.67%",
+    "StringUtils.isPalindrome needs null and edge case tests",
+    "StringUtils.truncate needs negative maxLen exception test",
+    "StringUtils.camelToSnake needs leading underscore handling",
+    "StringUtils.reverseWords needs whitespace handling tests",
+    "StringUtils.countOccurrences needs overlapping substring tests",
+    "StringUtils.repeat needs zero/negative count exception tests",
+    "StringUtils.capitalize needs multi-word and punctuation tests"
+  ]
+}

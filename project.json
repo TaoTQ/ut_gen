@@ -1,0 +1,10 @@
+{
+  "name": "java-utils-plus-commons-lang3",
+  "source_base": "project/src/main/java",
+  "test_base": "project/src/test/java",
+  "maven_dir": "project",
+  "maven_flags": "-Dhttps.protocols=TLSv1.2",
+  "java_home": "/opt/homebrew/opt/openjdk/bin",
+  "exclude_patterns": ["*Test.java", "*$*.java", "package-info.java"],
+  "model": "deepseek/deepseek-chat"
+}

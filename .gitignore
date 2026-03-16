@@ -1,0 +1,28 @@
+# Runtime outputs
+results/
+datasets/*.json
+
+# Java project (target project, not part of this repo)
+project/
+
+# Temporary files
+task_context.md
+*.bak
+
+# OS
+.DS_Store
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
